@@ -33,6 +33,7 @@ protected:
 
 class StrValidator: public QValidator
 {
+public:
     StrValidator(QObject* parent = 0)
         :QValidator(parent)
     {}
