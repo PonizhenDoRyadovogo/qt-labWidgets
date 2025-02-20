@@ -37,7 +37,7 @@ public:
     StrValidator(QObject* parent = 0)
         :QValidator(parent)
     {}
-    // TODO: Implement the string processing method
+
     virtual State validate(QString &str, int& pos) const
     {
         return Acceptable;
