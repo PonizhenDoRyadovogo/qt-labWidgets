@@ -17,24 +17,24 @@ class Win : public QWidget
     Q_OBJECT
 
 public:
-    Win(QWidget *parent = nullptr);
+    Win(QWidget* parent = nullptr);
 public slots:
     void begin();
     void calc();
 protected:
-    QFrame* frame;
-    QLabel* inputLabel;
-    QLineEdit* inputEdit;
-    QLabel* outputLabel;
-    QLineEdit* outputEdit;
-    QPushButton* nextButton;
-    QPushButton* exitButton;
+    QFrame* frame = nullptr;
+    QLabel* inputLabel = nullptr;
+    QLineEdit* inputEdit = nullptr;
+    QLabel* outputLabel = nullptr;
+    QLineEdit* outputEdit = nullptr;
+    QPushButton* nextButton = nullptr;
+    QPushButton* exitButton = nullptr;
 };
 
 class StrValidator: public QValidator
 {
 public:
-    StrValidator(QObject* parent = 0)
+    StrValidator(QObject* parent = nullptr)
         :QValidator(parent)
     {}
 

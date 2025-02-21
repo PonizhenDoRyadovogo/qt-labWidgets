@@ -60,8 +60,7 @@ void Win::calc()
     float r, a;
     QString str = inputEdit->text();
     a = str.toDouble(&Ok);
-    if(Ok)
-    {
+    if(Ok) {
         r = a * a;
         str.setNum(r);
         outputEdit->setText(str);
@@ -72,10 +71,8 @@ void Win::calc()
         nextButton->setVisible(true);
         nextButton->setFocus();
     }
-    else
-    {
-        if(!str.isEmpty())
-        {
+    else {
+        if(!str.isEmpty()) {
             QMessageBox msgBox(QMessageBox::Information, "Возведение в квадрат.", "Введено неверное значение.", QMessageBox::Ok);
             msgBox.exec();
         }
