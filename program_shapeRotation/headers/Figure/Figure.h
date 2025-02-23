@@ -6,13 +6,14 @@
 class Figure
 {
 public:
-    Figure(int X, int Y, int Halflen)
-        :x(X), y(Y), halflen(Halflen)
+    Figure(int x, int y, int halflen)
+        :_x(x), _y(y), _halflen(halflen)
     {}
-    void move(float Alpha, QPainter *painter);
+    virtual ~Figure() = default;
+    void move(float alpha, QPainter *painter);
 protected:
-    int x, y, halflen, dx, dy, r;
-    virtual void draw(QPainter *painter) = 0;
+    int _x, _y, _halflen, _dx, _dy, _r;
+    virtual void _draw(QPainter *painter) = 0;
 };
 
 class MyLine: public Figure
@@ -22,7 +23,7 @@ public:
         :Figure(x, y, halflen)
     {}
 protected:
-    void draw(QPainter *painer) override;
+    void _draw(QPainter *painter) override;
 };
 
 class MyRect: public Figure
@@ -32,7 +33,7 @@ public:
         :Figure(x, y, halflen)
     {}
 protected:
-    void draw(QPainter *painter) override;
+    void _draw(QPainter *painter) override;
 };
 
 #endif // FIGURE_H

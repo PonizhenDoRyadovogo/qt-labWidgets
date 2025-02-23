@@ -4,20 +4,20 @@
 
 void Figure::move(float alpha, QPainter *painter)
 {
-    dx = halflen * cos(alpha);
-    dy = halflen * sin(alpha);
-    draw(painter);
+    _dx = _halflen * cos(alpha);
+    _dy = _halflen * sin(alpha);
+    _draw(painter);
 }
 
-void MyLine::draw(QPainter *painter)
+void MyLine::_draw(QPainter *painter)
 {
-    painter->drawLine(x + dx, y + dy, x - dx, y - dy);
+    painter->drawLine(_x + _dx, _y + _dy, _x - _dx, _y - _dy);
 }
 
-void MyRect::draw(QPainter *painter)
+void MyRect::_draw(QPainter *painter)
 {
-    painter->drawLine(x + dx, y + dy, x + dy, y - dx);
-    painter->drawLine(x + dy, y - dx, x - dx, y - dy);
-    painter->drawLine(x - dx, y - dy, x - dy, y + dx);
-    painter->drawLine(x - dy, y + dx, x + dx, y + dy);
+    painter->drawLine(_x + _dx, _y + _dy, _x + _dy, _y - _dx);
+    painter->drawLine(_x + _dy, _y - _dx, _x - _dx, _y - _dy);
+    painter->drawLine(_x - _dx, _y - _dy, _x - _dy, _y + _dx);
+    painter->drawLine(_x - _dy, _y + _dx, _x + _dx, _y + _dy);
 }
