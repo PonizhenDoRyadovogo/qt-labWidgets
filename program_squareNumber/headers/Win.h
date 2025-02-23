@@ -8,10 +8,6 @@
 #include <QPushButton>
 #include <QValidator>
 
-QT_BEGIN_NAMESPACE
-namespace Ui { class Win; }
-QT_END_NAMESPACE
-
 class Win : public QWidget
 {
     Q_OBJECT
