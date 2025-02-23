@@ -14,10 +14,10 @@ public:
     MyLine *myLine = nullptr;
     MyRect *myRect = nullptr;
 protected:
-    void _paintEvent(QPaintEvent *event);
-    void _timerEvent(QTimerEvent *event);
-    void _showEvent(QShowEvent *event);
-    void _hideEvent(QHideEvent *event);
+    void paintEvent(QPaintEvent *event);
+    void timerEvent(QTimerEvent *event);
+    void showEvent(QShowEvent *event);
+    void hideEvent(QHideEvent *event);
 private:
     int m_myTimer;
     float m_alpha;

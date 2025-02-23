@@ -12,12 +12,12 @@ Area::Area(QWidget *parent)
     m_alpha = 0;
 }
 
-void Area::_showEvent(QShowEvent *)
+void Area::showEvent(QShowEvent *)
 {
     m_myTimer = startTimer(50);
 }
 
-void Area::_paintEvent(QPaintEvent *)
+void Area::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
     painter.setPen(Qt::red);
@@ -25,7 +25,7 @@ void Area::_paintEvent(QPaintEvent *)
     myRect->move(m_alpha * (-0.5), &painter);
 }
 
-void Area::_timerEvent(QTimerEvent *event)
+void Area::timerEvent(QTimerEvent *event)
 {
     if(event->timerId() == m_myTimer) {
         m_alpha = m_alpha + 0.2;
@@ -36,7 +36,7 @@ void Area::_timerEvent(QTimerEvent *event)
     }
 }
 
-void Area::_hideEvent(QHideEvent *)
+void Area::hideEvent(QHideEvent *)
 {
     killTimer(m_myTimer);
 }
