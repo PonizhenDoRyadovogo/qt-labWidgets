@@ -6,18 +6,18 @@
 Win::Win(QWidget *parent)
     : QWidget(parent)
 {
-    setWindowTitle(QStringLiteral("Возведение в квадрат"));
+    setWindowTitle("Возведение в квадрат");
     frame = new QFrame(this);
     frame->setFrameShadow(QFrame::Raised);
     frame->setFrameShape(QFrame::Panel);
-    inputLabel = new QLabel(QStringLiteral("Введите число:"), this);
+    inputLabel = new QLabel("Введите число:", this);
     inputEdit = new QLineEdit("", this);
     StrValidator* v = new StrValidator(inputEdit);
     inputEdit->setValidator(v);
-    outputLabel = new QLabel(QStringLiteral("Результат:"), this);
+    outputLabel = new QLabel("Результат:", this);
     outputEdit = new QLineEdit("", this);
-    nextButton = new QPushButton(QStringLiteral("Следующий"), this);
-    exitButton = new QPushButton(QStringLiteral("Выход"), this);
+    nextButton = new QPushButton("Следующий", this);
+    exitButton = new QPushButton("Выход", this);
 
     QVBoxLayout* vLayout1 = new QVBoxLayout(frame);
     vLayout1->addWidget(inputLabel);
