@@ -1,4 +1,5 @@
 #include <QLayout>
+#include <QtMath>
 #include <QMessageBox>
 
 #include "Win.h"
@@ -61,7 +62,19 @@ void Win::calc()
     QString str = inputEdit->text();
     a = str.toDouble(&Ok);
     if(Ok) {
+        float maxVal = qSqrt(std::numeric_limits<float>::max());
+        if (qAbs(a) > maxVal) {
+            QMessageBox::warning(this, "Ошибка", "Результат слишком велик и может привести к переполнению.");
+            return;
+        }
+
         r = a * a;
+
+        if (qIsInf(r) || qIsNaN(r)) {
+            QMessageBox::warning(this, "Ошибка", "Произошло переполнение при вычислении.");
+            return;
+        }
+
         str.setNum(r);
         outputEdit->setText(str);
         inputEdit->setEnabled(false);
